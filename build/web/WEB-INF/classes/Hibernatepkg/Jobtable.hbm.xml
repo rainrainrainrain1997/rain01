@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-12-26 11:39:12 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Hibernatepkg.Jobtable" table="JOBTABLE" schema="NIIT" optimistic-lock="version">
+        <id name="jobId" type="string">
+            <column name="JOB_ID" length="20" />
+            <generator class="assigned" />
+        </id>
+        <property name="NVacancies" type="string">
+            <column name="N_VACANCIES" length="20" />
+        </property>
+        <property name="location" type="string">
+            <column name="LOCATION" length="20" />
+        </property>
+        <property name="skillsRequired" type="string">
+            <column name="SKILLS_REQUIRED" length="40" />
+        </property>
+        <property name="dateInterview" type="string">
+            <column name="DATE_INTERVIEW" length="20" />
+        </property>
+        <property name="whomContact" type="string">
+            <column name="WHOM_CONTACT" length="20" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" length="40" />
+        </property>
+    </class>
+</hibernate-mapping>

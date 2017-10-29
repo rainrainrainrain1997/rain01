@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <style>
+             body{
+  margin:0;
+  padding: 0;
+
+}
+        .ss{
+            background-image:url("resources/1.png");
+            background-repeat: no-repeat;
+            background-position-x: center;
+            background-position-y: top;
+        }
+        .header{
+            background-color: #303A40;
+            line-height: 60px;
+
+        }
+        .pp{
+                font-family: "Microsoft YaHei";
+                margin:0;
+                padding: 0;
+                font-style:normal;
+                font-weight: 700;
+                
+                
+        }
+        .lin{
+            text-decoration: none;
+        }
+        head{
+
+
+        }
+        .ff{
+                display: block;
+        }
+        .zz{
+            height: 635px;
+        }
+        .rr{
+            display: block;
+            text-align: center;
+           
+        }
+        .kk{
+            text-decoration: none;
+            text-align: center;
+        }
+        </style>
+        <h:form>
+   <h:head>
+
+        
+          <div class="header">
+        <title>Facelet Title</title>
+        <p align="right" class="pp">
+            <h:commandLink action="JobCheck" value="search for job" class="kk"></h:commandLink>
+           
+                    |
+                <h:commandLink action="Manager" value="Manager" class="lin"> </h:commandLink>
+            </p>
+        </div>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body class="ss">
+   <div class="zz">
+        <center>
+        
+        
+            
+            
+            <h2>Individual information</h2>
+            
+            <table border="1">
+                
+               
+                <tr>
+                    <td size="" align="" ><h:outputText value="Name" ></h:outputText></td>
+                    <td size="" align="" colspan="2"><h:inputText  value="#{userLoginBean.name}"></h:inputText></td>
+                </tr>
+                <tr>
+                    <td size="" align=""><h:outputText value="Id"></h:outputText></td>
+                    <td size="" align="" colspan="2"><h:outputText  value="#{userLoginBean.id}"></h:outputText></td>
+                </tr>
+                <tr>
+                    <td size="" align=""><h:outputText value="Password"></h:outputText></td>
+                    <td size="" align="" colspan="2"><h:inputText  value="#{userLoginBean.password}" ></h:inputText></td>
+                </tr>
+                <tr>
+                    <td size="" align=""><h:outputText value="Gender"></h:outputText></td>
+                    <td size="" align="" colspan="2"><h:inputText  value="#{userLoginBean.gender}"></h:inputText></td>
+                </tr>
+                <tr>
+                    <td size="" align=""><h:outputText value="Age"></h:outputText></td>
+                    <td size="" align="" colspan="2"><h:inputText  value="#{userLoginBean.age}"></h:inputText></td>
+                </tr>
+                <tr>
+                    <td size="" align=""><h:outputText value="Phone"></h:outputText></td>
+                    <td size="" align="" colspan="2"><h:inputText  value="#{userLoginBean.phone}"></h:inputText></td>
+                </tr>
+                <tr>
+                    <td rowspan="3">skills</td>
+                    <td>java</td>  
+                    <td><h:inputText value="#{userLoginBean.java}"></h:inputText></td>
+                </tr>
+                <tr>
+
+                    <td>c++</td>  
+                    <td><h:inputText value="#{userLoginBean.cplus}"></h:inputText></td>
+                </tr>
+                <tr>
+                    
+                    <td>javaweb</td>  
+                    <td><h:inputText value="#{userLoginBean.javaweb}"></h:inputText></td>  
+                </tr>
+
+                <tr>
+                    <td size="" align=""><h:outputText value="Qlification"></h:outputText></td>
+                    <td size="" align="" colspan="2"><h:inputText  value="#{userLoginBean.qualification}"></h:inputText></td>
+                </tr>
+                <tr>
+                    <td size="" align=""><h:outputText value="Expirence"></h:outputText></td>
+                    <td size="" align="" colspan="2"><h:inputTextarea  value="#{userLoginBean.expirence}" rows="5" cols="30" ></h:inputTextarea></td>
+                </tr>
+                <tr>
+                    <td size="" align=""><h:outputText value="Address" ></h:outputText></td>
+                    <td size=""  align="" colspan="2"><h:inputTextarea  value="#{userLoginBean.address}" rows="5" cols="30"></h:inputTextarea></td>
+                </tr>
+                <tr>
+                    
+                    <td align="center"><h:commandButton value="SAVA" action="#{userLoginBean.test}"></h:commandButton></td>
+                    <td align="center"><h:inputText value="#{userLoginBean.pdf}"></h:inputText></td>
+                    
+                    <td align="center"><h:commandButton value="PDF" action="#{userLoginBean.CreatePDF}"></h:commandButton></td>
+                </tr>
+             
+            </table>
+       
+        </center>
+       </div>
+        <footer class="ff">
+                <div >
+                    <p class="rr">京ICP备09083200号 京ICP证070419号 人才服务许可证:RC0710280 京公网安备11010502026763</p>
+                    <p class="rr">Copyright©2000-2016 liepin.com All Rights Reserved</p>
+                </div>
+            </footer>   
+    </h:body>
+             </h:form>
+</html>
+

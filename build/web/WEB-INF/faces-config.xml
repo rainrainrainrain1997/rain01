@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <managed-bean>
+        <managed-bean-name>userRigisterBean</managed-bean-name>
+        <managed-bean-class>UserBean.UserRigisterBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>userLoginBean</managed-bean-name>
+        <managed-bean-class>UserBean.UserLoginBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>bobbean</managed-bean-name>
+        <managed-bean-class>beanpkg.Adminbean</managed-bean-class>
+    
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+
+
+
+
+
+
+
+
+        <navigation-rule>
+        
+        <navigation-case>
+            <from-action>#{userLoginBean.jinru}</from-action>
+            <from-outcome>yes</from-outcome>
+            <to-view-id>successlogin.xhtml</to-view-id>
+        </navigation-case>
+        </navigation-rule>
+
+
+
+        <navigation-rule>
+        <from-view-id>LoginPage.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{userLoginBean.UserLoginSubmit}</from-action>
+            <from-outcome>succeedlogin</from-outcome>
+            <to-view-id>successlogin.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{userLoginBean.UserLoginSubmit}</from-action>
+            <from-outcome>passerror</from-outcome>
+            <to-view-id>passerror.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{userLoginBean.UserLoginSubmit}</from-action>
+            <from-outcome>dontexist</from-outcome>
+            <to-view-id>dontexist.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>RegisterPage.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{userRigisterBean.UserRegisterSubmit}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>LoginPage.xhtml</to-view-id>            
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{userRigisterBean.UserRegisterSubmit}</from-action>
+            <from-outcome>passmatch</from-outcome>
+            <to-view-id>passnotmatch.xhtml</to-view-id>            
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{userRigisterBean.UserRegisterSubmit}</from-action>
+            <from-outcome>exist</from-outcome>
+            <to-view-id>existuser.xhtml</to-view-id>            
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{userRigisterBean.UserRegisterSubmit}</from-action>
+            <from-outcome>both</from-outcome>
+            <to-view-id>botherror.xhtml</to-view-id>            
+        </navigation-case>
+    </navigation-rule>
+
+        
+        <!--Manager -->
+        <navigation-rule>
+        <from-view-id>Manager.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{bobbean.TestAdminDetail}</from-action>
+            <from-outcome>ok</from-outcome>
+            <to-view-id>Right_of_admin.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{bobbean.TestAdminDetail}</from-action>
+            <from-outcome>error</from-outcome>
+            <to-view-id>Manager.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    
+    
+
+    
+    
+    
+    
+    <managed-bean>
+        <managed-bean-name>updateBean</managed-bean-name>
+        <managed-bean-class>UserBean.UpdateBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+</faces-config>

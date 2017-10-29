@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <style>
+        .ss{
+            background-image:url("resources/1.png");
+            background-repeat: no-repeat;
+            background-position-x: center;
+            background-position-y: top;
+        }
+        .header{
+            /*font-size: xx-large;*/
+        }
+    </style>
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body class="ss">
+        <center>
+            <h2>Payment Information</h2>
+            <h:form enctype="multipart/form-data">
+            
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td align="right"><h:inputText size="30" required="true" value="#{userRigisterBean.name}" requiredMessage="Name can't be left blank"></h:inputText></td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td align="right"><h:inputText value="#{userRigisterBean.age}" size="30" required="true" requiredMessage="Age can't be left blank"></h:inputText></td>
+                </tr>
+                <tr>
+                    <td >Gender</td>
+                    <td align="center" >
+                        <h:selectOneRadio required="false" requiredMessage="Must choose one" value="#{userRigisterBean.gender}">
+                            <f:selectItem id="man" itemLabel="M" itemValue="m"></f:selectItem>
+                            <f:selectItem id="woman" itemLabel="F" itemValue="f"></f:selectItem>
+                        </h:selectOneRadio>
+
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>Contact no</td>
+                    <td align="right"><h:inputText  size="30" required="true" requiredMessage="Phone can't be left blank" value="#{userRigisterBean.phone}" validatorMessage="the lenth of the phone number must be 11">
+                            <f:validateLength maximum="11" minimum="11"></f:validateLength>
+                        </h:inputText></td>
+                </tr>
+                <tr>
+                    <td>ID</td>
+                    <td align="right"><h:inputText size="30" required="true" requiredMessage="ID can't be left blank" value="#{userRigisterBean.id}"></h:inputText></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td align="right"><h:inputSecret size="31" required="true" requiredMessage="Password can't be left blank" value="#{userRigisterBean.password}" ></h:inputSecret></td>
+                </tr>
+                <tr>
+                    <td>Agin Password</td>
+                    <td align="right"><h:inputSecret size="31" required="true" value="#{userRigisterBean.passcheck}" requiredMessage="Agin Password can't be left blank"></h:inputSecret></td>
+                </tr>
+                <tr>
+                    <td>Qualification</td>
+                    <td align="right"><h:inputText size="30" value="#{userRigisterBean.qualification}"></h:inputText></td>
+                </tr>
+                <tr>
+                    <td>Skills</td>
+                    <td align="right">
+                        <h:selectManyCheckbox value="#{userRigisterBean.skills}">
+                        <f:selectItem itemLabel="JAVA" itemValue="java"  />
+                        <f:selectItem itemLabel="C++" itemValue="cplus"/>
+                        <f:selectItem itemLabel="JAVA WEB" itemValue="javaweb"/>
+                    </h:selectManyCheckbox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Photo upload</td>
+                    <td align="right"><h:inputFile value="#{userRigisterBean.file}" />
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">Professional experience</td>
+                    
+                </tr>
+                <tr>
+                    <td colspan="2" ><h:inputTextarea value="#{userRigisterBean.expirence}" rows="5" cols="42"/></td>
+                </tr>                   
+                <tr>
+                    <td colspan="2">Address</td>
+                    
+                </tr>
+                <tr>
+                    <td colspan="2" ><h:inputTextarea value="#{userRigisterBean.address}" rows="5" cols="42"/></td>
+                </tr>
+                <tr>
+                    <td><h:commandButton  value="RESET" type="reset"></h:commandButton></td>
+                    <td align="right"><h:commandButton  value="SUBMIT" type="submit" action="#{userRigisterBean.UserRegisterSubmit}"></h:commandButton></td>
+                </tr>
+            </table>
+        </h:form>
+            </center>
+    </h:body>
+</html>
+
